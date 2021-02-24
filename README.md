@@ -1,4 +1,4 @@
-# WEEK07-EXERCISE ⭐ ⭐ ⭐
+# WEEK07-EXERCISE 
 
 แบบฝึกหัดสัปดาห์ที่ 7 Event Loop / Callback / Promise / Async & Await
 

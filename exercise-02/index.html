@@ -50,17 +50,17 @@
           ในการนับถอยหลัง​​ โดยแสดงเวลาในรูปแบบนาที และวินาที  
         </p>
         <br>
-        <p class="has-text-danger	">หมายเหตุ 1 : ให้ตั้งเวลา default เป็น 119 วินาที</p>
-        <p class="has-text-danger	">หมายเหตุ 2 : หากมีการกำหนดจำนวนวินาทีในช่อง Input มากกว่า 0 เมื่อกด Run ให้แสดงผลการนับถอยหลังตามที่กำหนด</p>
-        <p class="has-text-danger	">หมายเหตุ 3 : ให้เก็บข้อมูลนาทีและวินาทีใน data() เท่านั้น ห้ามทำการใช้ document.</p>
-        <p class="has-text-danger	">หมายเหตุ 4 : กรณีหมดเวลาและตอนเริ่มต้น ต้องแสดงผลเป็น 00:00 เท่านั้น</p>
+        <p class="has-text-danger">หมายเหตุ 1 : ให้ตั้งเวลา default เป็น 119 วินาที</p>
+        <p class="has-text-danger">หมายเหตุ 2 : หากมีการกำหนดจำนวนวินาทีในช่อง Input มากกว่า 0 เมื่อกด Run ให้แสดงผลการนับถอยหลังตามที่กำหนด</p>
+        <p class="has-text-danger">หมายเหตุ 3 : ให้เก็บข้อมูลนาทีและวินาทีใน data() เท่านั้น ห้ามใช้ document.</p>
+        <p class="has-text-danger">หมายเหตุ 4 : กรณีหมดเวลาและตอนเริ่มต้น ต้องแสดงผลเป็น 00:00 เท่านั้น</p>
         <br /><br>
         <div class="columns">
           <div class="column is-one-fifth">
             <input class="input" type="number" placeholder="นับถอยหลังกี่วินาที ?">
           </div>
           <div class="column is-one-fifth">
-            <button class="button is-dark">
+            <button class="button is-dark" @click="stopTime()">
               >: Run
             </button>
           </div>
@@ -77,38 +77,39 @@
       <!-- 2.2 -->
       <div class="box">
         <p>
-          <b>2.2</b> ทดลองดึง API ให้นักศึกษาแก้ <code>Method getDogDemo()</code> โดยกำหนดว่า เมื่อกดปุ่ม Run ให้ดึงรูปมาแสดงผล
-          โดยตั้งให้ดีเลย์ห่างกัน 10 วินาที และเมื่อทำการกดปุ่ม RUN ให้แสดงเลขนับถอยหลัง 10 ถึง 1 และแสดงรูปที่ได้หลังจากถึงกำหนดเวลา
+          <b>2.2</b> ให้นักศึกษาแก้ <code>Method getDogDemo()</code> 
+          <br>เมื่อกดปุ่ม Run ให้นับเวลาถอยหลัง 10 วินาที จากนั้นแสดงรูปที่สุ่มได้จาก API <code>https://dog.ceo/api/breeds/image/random</code>
         </p>
         <br>
-        <p class="has-text-danger">หมายเหตุ 1 : ให้ใช้ API นี้ในการดึงข้อมูลมาแสดงผล <code>https://dog.ceo/api/breeds/image/random</code></p>
-        <p class="has-text-danger">หมายเหตุ 2 : ให้ดึง API ด้วย <code>Method getAPI()</code> จากข้อ 2.2 เท่านั้น</p>
+        <p class="has-text-danger">หมายเหตุ: เรียกใช้ API ด้วยฟังก์ชัน <code>getAPI()</code> เท่านั้น</p>
         <br /><br>
         <div class="columns">
           <div class="column is-two-fifths">
-            <button class="button is-dark">
+            <button class="button is-dark" @click="getDogDemo()">
               >: Run
             </button>
           </div>
           <div class="column has-background-link-light	has-text-centered">
             <!-- แก้ไขส่วนนี้เพื่อนำข้อมูลมาแสดงผล -->
+            <span class="count-down">10</span>
+            <img src="" alt="">
           </div>
         </div>
       </div>
       <!-- 2.3 -->
       <div class="box">
         <p>
-          <b>2.3</b> ให้แก้ไข <code>Method getMedium()</code> โดยกำหนดว่า เมื่อกดปุ่ม Run ให้เรียกชื่อบทความมาแสดงผล
-          โดยตั้งให้ดีเลย์ห่างกัน 2 - 1 - 3 - 5 วินาที ตามลำดับ (โดยแสดงผลแค่ 4 เรื่องแรก ในรูปแบบ dl li) 
-          และชื่อบทความที่ได้มาแสดงผล โดยเก็บข้อมูลในรูปแบบ Array และ v-for ออกมาเพื่อแสดงผล
+          <b>2.3</b> ให้แก้ไข <code>Method getMedium()</code> 
+          <br>เมื่อกดปุ่ม Run ให้เรียกใช้ API <code>https://v1.nocodeapi.com/jacktnp/medium/xvYwlRhrjtVLsWUn</code> 
+          <br>และแสดงผล 4 บทความแรกที่ได้จาก API ด้วยแท็ก &lt;dl&gt; และ &lt;li&gt;
+          <br>โดยให้แต่ละบทความปรากฎขึ้นบนจอโดยมีดีเลย์ห่างกัน 2 - 1 - 3 - 5 วินาที ตามลำดับ 
         </p>
         <br>
-        <p class="has-text-danger">หมายเหตุ 1 : ให้ใช้ API นี้ในการดึงข้อมูลมาแสดงผล <code>https://v1.nocodeapi.com/jacktnp/medium/xvYwlRhrjtVLsWUn</code></p>
-        <p class="has-text-danger">หมายเหตุ 2 : ให้ดึง API ด้วย <code>Method getAPI()</code> จากข้อ 2.2 เท่านั้น</p>
+        <p class="has-text-danger">หมายเหตุ: เรียกใช้ API ด้วยฟังก์ชัน <code>getAPI()</code> เท่านั้น</p>
         <br /><br>
         <div class="columns">
           <div class="column is-two-fifths">
-            <button class="button is-dark">
+            <button class="button is-dark" @click="getMedium()">
               >: Run
             </button>
           </div>
@@ -126,6 +127,23 @@
     </div>
 
     <script>
+      // ฟังก์ชันเรียก API
+      function getAPI (url, success, error) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            const res = JSON.parse(this.response);
+            success(res);
+          } else if (this.readyState == 4) {
+            const res = JSON.parse(this.response);
+            error(res);
+          }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.setRequestHeader("Accept", "application/json");
+        xhttp.send();
+      }
+
       var app = new Vue({
         el: "#app",
         data: {
@@ -135,29 +153,10 @@
           stopTime(setTime) {
 
           },
-          // ฟังก์ชันเรียก API
-          getAPI (url, array, success) {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-              if (this.readyState == 4 && this.status == 200) {
-                const res = JSON.parse(this.response);
-                if(array == 'none'){
-                  success(res);
-                }
-                else{
-                  success(res[array]);
-                }
-              } else if (this.readyState == 4) {
-                const res = JSON.parse(this.response);
-                error(res[array]);
-              }
-            };
-            xhttp.open("GET", url, true);
-            xhttp.setRequestHeader("Accept", "application/json");
-            xhttp.send();
-          },
           getDogDemo(url) {
-            
+            getAPI('https://dog.ceo/api/breeds/image/random', function (res) {
+              console.log(res)
+            })
           },
           getMedium(url) {
             

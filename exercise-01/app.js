@@ -44,13 +44,13 @@ function app2() {
     console.log("hello");
   }, 1000);
 
-  let max_loop = 10000000000;
+  let max_loop = 1000000000;
 
   for (let i = 0; i < max_loop; i++) {
     let progress = (i / max_loop) * 100;
 
     if (i % (max_loop / 100) === 0) {
-      console.log(progress + "%");
+      console.log(progress.toFixed(0) + "%");
     }
   }
 }

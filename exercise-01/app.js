@@ -13,7 +13,7 @@ function app1() {
 
   var third = setTimeout(() => {
     console.log(3);
-  }, 00);
+  }, 1000);
 
   setTimeout(() => {
     console.log(4);

@@ -11,10 +11,12 @@ function task(id) {
 
 function tester() {
   // hint : task(1).then().catch() ..... task(4)...
+  // ต้องเรียก function task 4 ครั้ง เปลี่ยน id ไปเรื่อยๆ
 }
 
 // ข้อ 3.3
-// hint : การ getAPI ดูข้อมูลที่ได้ด้วยว่ามีโครงสร้างแบบใด
+// hint : เรียก getAPI() ที่ url = https://api.thecatapi.com/v1/images/search 
+// อย่าลืม console.log() ดูข้อมูลที่ได้ด้วยว่ามีโครงสร้างแบบใด
 function checkAuth(password) {
   
 }

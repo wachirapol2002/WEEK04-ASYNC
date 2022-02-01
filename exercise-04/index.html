@@ -38,8 +38,43 @@
     <h3 class="title is-3 my-3"><b>EXERCISE 4 : Async & Await</b></h3>
     <!-- 4.1 -->
     <div class="box">
+      <p><b>4.1</b> นักศึกษาได้รับมอบหมายให้สร้างโปรแกรมเอาไว้สำหรับทดสอบ delay ของระบบ 
+        <br>(ให้นำข้อ 3.2 ใน EXERCISE 3 : Promise มาประยุกต์ต่อ) 
+        โดยให้แก้ไข <code>Function task(id)</code> และ <code>Function tester()</code> 
+        <br>
+      </p>
+      <br>
+      <dl>
+        <li>ในส่วนของ <code>Function task(id)</code> ให้ return Promise ที่ทำการตรวจสอบค่า delay ที่ได้จากการ Random ของแต่ละ task โดยมีเงื่อนไขดังนี้<br>
+          &nbsp; &nbsp; &nbsp;1. ถ้า task นั้นๆ มีค่า delay ที่น้อยกว่า 500ms จะมี format ในการแสดงผลดังนี้ : "task [id]: [ค่า delay]ms ... PASS!"<br>
+          &nbsp; &nbsp; &nbsp;2. ถ้า task นั้นๆ มีค่า delay ที่มากกว่า 500ms จะมี format ในการแสดงผลดังนี้ : "task [id]: [ค่า delay]ms ... NOTPASS!"
+        </li>
+        <li>เมื่อกด Run จะเรียกใช้งาน <code>Function tester()</code> เพื่อแสดงผลลัพธ์การทดสอบ task ทั้งหมด 4 task ผ่าน console</li>
+      </dl>
+      <br>
+      <p class="has-text-danger">หมายเหตุ 1 : ในข้อนี้ให้ทำการประยุกต์ใช้ async/await</p>
+      <p class="has-text-danger">หมายเหตุ 2 : ลำดับของการแสดงผล ขึ้นอยู่กับค่า delay ของ task นั้นๆ <span class="has-text-primary">(hint: setTimeout())</span></p>
+      <br>
+      <p class="has-text-info">ตัวอย่างของการแสดงผล</p>
+      <img width="25%" src="./assets/ex1.jpg">&nbsp;<img width="25%"  src="./assets/ex2.jpg">
+      <br><br>
+      <div class="columns">
+        <div class="column is-4">
+          <button class="button is-dark" onclick="tester()">
+            >: Run
+          </button>
+        </div>
+        <div class="column has-background-link-light has-text-centered">
+          <p>
+            เปิด console เพื่อดูผลลัพธ์!
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- 4.2 -->
+    <div class="box">
       <p>
-        <b>4.1</b> ให้นักศึกษาทำระบบยันยันตัวตน (ให้นำข้อ 3.3 ใน EXERCISE 3 : Promise มาประยุกต์ต่อ) โดยมีขั้นตอนดังนี้
+        <b>4.2</b> ให้นักศึกษาทำระบบยันยันตัวตน (ให้นำข้อ 3.3 ใน EXERCISE 3 : Promise มาประยุกต์ต่อ) โดยมีขั้นตอนดังนี้
       </p>
       <br>
       <dl>

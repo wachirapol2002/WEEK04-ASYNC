@@ -49,7 +49,20 @@
           จากนั้นทดลองรันโค๊ด เปรียบเทียบผลลัพธ์
           และอธิบายการทำงาน
         </p>
-        <textarea name="" id="" cols="30" rows="5"></textarea>
+        <textarea name="" id="" cols="30" rows="5">
+     //(1) บรรทัดที่ 7 const second = setTimeout(() => {console.log(2);}, 1500); ตั้งเวลา 1.5 วิ และรออยู่ในคิว
+     //(2) บรรทัดที่ 11 var third = setTimeout(() => {console.log(3);}, 1000); ตั้งเวลา 1 วิ และรออยู่ในคิว
+     //(3) บรรทัดที่ 15 setTimeout(() => {console.log(4);}, 0); ตั้งเวลา 0 วิ และรออยู่ในคิว [4]
+5    //(4) บรรทัดที่ 19 console.log(5)
+     //(5) บรรทัดที่ 21 setTimeout(() => {console.log(5 + 1);}, 2000); ตั้งเวลา 2 วิ และรออยู่ในคิว
+     //(6) บรรทัดที่ 34 calculator(7, 1, showLog); เรียกใช้ บรรทัดที่ 29, 25
+     //(7) บรรทัดที่ 29 function calculator เรียกใช้ บรรทัดที่ 25 function showLog(data)
+8    //(8) บรรทัดที่ 25 showLog(8) {console.log(8);}
+4    //(9) จาก (3) ทำ console.log(4) [4]
+3    //(10) จาก (2) ทำ console.log(3) รอ 1 วิ [3]
+2    //(11) จาก (1) ทำ console.log(2) รอ 0.5 วิ [2]
+6    //(12) จาก (5) ทำ console.log(5 + 1) รอ 0.5 วิ [6]
+        </textarea>
         <br>
         <br>
 <pre>
